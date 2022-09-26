@@ -18,7 +18,7 @@ const News = ({ simplified }) => {
 
   if(!cryptoNews?.value) return <Loader />;
   return (
-    <Row gutter={[ 24,24 ]}>
+    <Row gutter={[{ lg: 24, md: 20, sm: 16, xs: 8 }, { lg: 24, md: 20, sm: 16, xs: 8 } ]}>
       {!simplified && (
         <Col span={24}>
           <Select
@@ -35,13 +35,12 @@ const News = ({ simplified }) => {
         </Col>
       )}
       {cryptoNews.value.map((news, i) => (
-        <Col xs={24} sm={12} lg={8} key={i}>
-          <Card hoverable className='news-card'>
+        <Col xs={12} sm={12} lg={8} key={i}>
+          <Card  hoverable className='news-card' bodyStyle={{padding: '15px'}}>
             <a href={news.url} target='_blank' rel='noreferrer'>
               <div className='news-image-container'>
                 <Title className='news-title' level={4}>{news.name}</Title>
                 <img
-                  style={{ maxWidth: '200px', maxHeight: '100px' }}
                   src={news?.image?.thumbnail?.contentUrl || demoImage}
                   alt='news'
                 />
@@ -54,7 +53,7 @@ const News = ({ simplified }) => {
               </p>
               <div className='provider-container'>
                 <div>
-                  <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt='news' />
+                  <Avatar className='news-image' src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt='news' />
                   <Text className='provider-name'>{news.provider[0]?.name}</Text>
                 </div>
                 <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>

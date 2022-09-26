@@ -10,7 +10,7 @@ import 'antd/dist/antd.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
       <App />
     </Provider>

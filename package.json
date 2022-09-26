@@ -2,7 +2,7 @@
   "name": "cryptocurrency_app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tonysopranoo.github.io",
+  "homepage": "https://tonysopranoo.github.io/cryptocurrency_app",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@reduxjs/toolkit": "^1.8.5",
